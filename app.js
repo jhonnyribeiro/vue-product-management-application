@@ -228,5 +228,8 @@ new Vue({
          this.order.column = column;
          this.order.dir = this.order.dir * -1;
       },
+      clearText() {
+         this.filters.name = '';
+      },
    },
 });
