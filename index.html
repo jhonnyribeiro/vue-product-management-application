@@ -30,7 +30,8 @@
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" v-show="isSearching"
                                             @click="clearText" type="button"><i class="fas fa-sync-alt"></i></button>
-                                        <button class="btn btn-outline-secondary" v-on:click="search" type="button"><i
+                                        <button class="btn btn-outline-secondary" v-on:click="search"
+                                            :disabled="keywordsIsInvalid" type="button"><i
                                                 class="fas fa-search"></i></button>
                                     </div>
                                 </div>

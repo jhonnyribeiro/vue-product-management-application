@@ -224,6 +224,9 @@ new Vue({
 
          return products;
       },
+      keywordsIsInvalid() {
+         return this.filters.keywords.length < 3
+      }
    },
 
    methods: {
@@ -243,9 +246,11 @@ new Vue({
          this.isSearching = false;
       },
       search() {
-         this.filters.name = this.filters.keywords;
+         if (!this.keywordsIsInvalid) {
+            this.filters.name = this.filters.keywords;
 
-         this.isSearching = true;
+            this.isSearching = true;
+         }
       },
    },
 });
