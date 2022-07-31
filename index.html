@@ -62,9 +62,9 @@
                         <li class="page-item"><a class="page-link" :class="{ disabled: isFirstPage}" href="#"
                                 @click.stop.prevent="previous">Previous</a>
                         </li>
-                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                        <li class="page-item" :class="{active : currentPage == page}" v-for="page in pages">
+                            <a class="page-link" href="#" @click.prevent="switchPage(page)">{{page}}</a>
+                        </li>
                         <li class="page-item"><a class="page-link" :class="{ disabled: isLastPage}" href="#"
                                 @click.stop.prevent="next">Next</a></li>
                     </ul>

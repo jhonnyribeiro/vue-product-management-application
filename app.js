@@ -281,5 +281,8 @@ new Vue({
             this.currentPage++;
          }
       },
+      switchPage(page) {
+         this.currentPage = page;
+      },
    },
 });
