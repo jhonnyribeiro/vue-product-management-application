@@ -191,7 +191,10 @@ new Vue({
 
       filters: {
          name: '',
+         keywords: '',
       },
+
+      isSearching: false,
    },
 
    computed: {
@@ -210,9 +213,6 @@ new Vue({
       },
       sortType() {
          return this.order.dir === 1 ? "ascending" : "descending"
-      },
-      whenSearching() {
-         return this.filters.name.length > 0;
       },
       productsFiltered() {
          let products = this.products;
@@ -239,6 +239,13 @@ new Vue({
       },
       clearText() {
          this.filters.name = '';
+         this.filters.keywords = '';
+         this.isSearching = false;
+      },
+      search() {
+         this.filters.name = this.filters.keywords;
+
+         this.isSearching = true;
       },
    },
 });

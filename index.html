@@ -25,12 +25,12 @@
                         <div class="form-inline justify-content-end">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" v-model="filters.name" class="form-control"
-                                        placeholder="Search...">
+                                    <input type="text" v-model="filters.keywords" v-on:keyup.enter="search"
+                                        v-on:keyup.esc="clearText" class="form-control" placeholder="Search...">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" v-show="whenSearching"
+                                        <button class="btn btn-outline-secondary" v-show="isSearching"
                                             @click="clearText" type="button"><i class="fas fa-sync-alt"></i></button>
-                                        <button class="btn btn-outline-secondary" type="button"><i
+                                        <button class="btn btn-outline-secondary" v-on:click="search" type="button"><i
                                                 class="fas fa-search"></i></button>
                                     </div>
                                 </div>
@@ -74,10 +74,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
     <script src="app.js"></script>
-
-    <script>
-        console.log(products)
-    </script>
 </body>
 
 </html>
