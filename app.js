@@ -195,6 +195,10 @@ new Vue({
       },
 
       isSearching: false,
+
+      perPage: 10,
+
+      currentPage: 1,
    },
 
    computed: {
@@ -226,7 +230,21 @@ new Vue({
       },
       keywordsIsInvalid() {
          return this.filters.keywords.length < 3
-      }
+      },
+      productsPaginated() {
+         let start = (this.currentPage - 1) * this.perPage;
+         let end = this.currentPage * this.perPage;
+         return this.productsSorted.slice(start, end)
+      },
+      isFirstPage() {
+         return this.currentPage === 1;
+      },
+      isLastPage() {
+         return this.currentPage >= this.pages;
+      },
+      pages() {
+         return Math.ceil(this.productsFiltered.length / this.perPage);
+      },
    },
 
    methods: {
@@ -250,6 +268,17 @@ new Vue({
             this.filters.name = this.filters.keywords;
 
             this.isSearching = true;
+         }
+      },
+      previous() {
+         if (!this.isFirstPage) {
+            this.currentPage--;
+         }
+
+      },
+      next() {
+         if (!this.isLastPage) {
+            this.currentPage++;
          }
       },
    },
