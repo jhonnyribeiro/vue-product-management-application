@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue.js Datavue - Manage Products</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
 </head>
+
 <body>
     <div class="container py-5" id="app">
         <div class="card">
@@ -21,11 +25,13 @@
                         <div class="form-inline justify-content-end">
                             <div class="form-group">
                                 <div class="input-group">
-                                  <input type="text" class="form-control" placeholder="Search...">
-                                  <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-sync-alt"></i></button>
-                                    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-                                  </div>
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button"><i
+                                                class="fas fa-sync-alt"></i></button>
+                                        <button class="btn btn-outline-secondary" type="button"><i
+                                                class="fas fa-search"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +42,7 @@
                         <tr>
                             <th>Product Name</th>
                             <th>Category</th>
-                            <th @click="sort" :class="classes">Price</th>
+                            <th @click="sort('price')" :class="classes">Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,13 +56,13 @@
             </div>
             <div class="card-footer">
                 <nav>
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                  </ul>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
                 </nav>
             </div>
         </div>
@@ -72,4 +78,5 @@
         console.log(products)
     </script>
 </body>
+
 </html>
