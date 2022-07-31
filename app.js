@@ -196,7 +196,7 @@ new Vue({
 
    computed: {
       productsSorted() {
-         return this.products.sort((a, b) => {
+         return this.productsFiltered.sort((a, b) => {
             let left = a[this.order.column], right = b[this.order.column]; // a.nome  b.name
 
             if (isNaN(left) || isNaN(right)) {
@@ -214,6 +214,16 @@ new Vue({
       whenSearching() {
          return this.filters.name.length > 0;
       },
+      productsFiltered() {
+         let products = this.products;
+
+         if (this.filters.name.length > 0) {
+            let findName = new RegExp(this.filters.name, "i")
+            products = products.filter(el => el.name.match(findName))
+         }
+
+         return products;
+      },
    },
 
    methods: {
@@ -223,7 +233,6 @@ new Vue({
             column === this.order.column ? this.sortType : ''
          ];
       },
-
       sort(column) {
          this.order.column = column;
          this.order.dir = this.order.dir * -1;
